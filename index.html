@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            scroll-behavior: smooth;
+            color: white;
+            font-family: Arial, sans-serif;
+            animation: fadeIn 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 3px; 
+          }
+
+        h3 {
+            font-size: 19px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #b5b5b5;
+        }
+
+        h1 {
+            font-size: 62px;
+            margin-top: 0;
+            font-family: 'Signika Negative', sans-serif;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-left: 2px;
+            margin-top: 0;
+        }
+
+        .header {
+            height: 80%;
+            background-attachment: fixed;
+            background-image: url('my-photo2.jpg');
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .parallax-section {
+            height: 90vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-long {
+            height: auto;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-text {
+            text-align: left;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding-top: 9.0%;
+        }
+
+        .parallax-content {
+            padding: 50px;
+        }
+
+        .switch-button {
+            margin: 0px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: left;
+            font-family: 'Poppins', sans-serif;
+            align-items: center;
+            gap: 20px;
+        }
+
+        p2{
+            display: flex;
+            font-size: 16px;
+            color: rgb(161, 161, 161);
+            justify-content: left;
+            font-family: 'Poppins', sans-serif;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .p3{
+            text-align: center;
+            margin-top: 19px;
+        }
+
+        .slider {
+            width: 60%;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 22px;
+            position: relative;
+            height: auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .navigation button {
+            background: none;
+            border: none;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+          .social-buttons {
+            display: flex;
+            margin-top: 22px;
+            max-width: fit-content;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            box-shadow: 0px 0px 15px #00000027;
+            padding: 15px 10px;
+            border-radius: 1em;
+            }
+            
+            .social-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 4px #00000027;
+            transition: 0.3s;
+            }
+            
+            .social-button:hover {
+            background-color: #f2f2f2;
+            box-shadow: 0px 0px 6px 3px #00000027;
+            }
+            
+            .social-buttons svg {
+            transition: 0.3s;
+            margin-bottom: 49%;
+            height: 20px;
+            }
+            
+            .gmail{
+            background-color: #FF0004;
+            }
+            
+            .gmailsvg {
+            width: 25px;
+            height: 25px;
+            fill: #f2f2f2;
+            }
+            
+            .gmail:hover svg {
+            fill: #FF0004;
+            }
+            
+            .github {
+            background-color: #333;
+            }
+            
+            .github svg {
+            width: 25px;
+            height: 25px;
+            fill: #f2f2f2;
+            }
+            
+            .github:hover svg {
+            fill: #333;
+            }
+            
+            .linkedin {
+            background-color: #0077b5;
+            }
+            
+            .linkedin svg {
+            fill: #f2f2f2;
+            }
+            
+            .linkedin:hover svg {
+            fill: #0077b5;
+            }
+              
+              * {
+                box-sizing: border-box;
+                margin-top: 22px;
+              }
+              
+              .container {
+                position: relative;
+                overflow: auto;
+              }
+              
+              .mySlides {
+                display: none;
+              }
+              
+              .cursor {
+                cursor: pointer;
+              }
+              
+              .prev,
+              .next {
+                cursor: pointer;
+                position: absolute;
+                top: 40%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+              }
+              
+              .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+              }
+            
+              .prev:hover,
+              .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+              }
+              
+              .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+              }
+                           
+              .caption-container {
+                text-align: center;
+                background-color: #222;
+                padding: 2px 16px;
+                color: white;
+              }
+              
+              .row:after {
+                content: "";
+                display: table;
+                clear: both;
+              }
+              
+              .column {
+                float: inline-start;
+                overflow: auto;
+                width: 10%;
+              }
+              
+              
+              .demo {
+                opacity: 0.6;
+              }
+              
+              .active,
+              .demo:hover {
+                opacity: 1;
+              }
+
+              .glow-on-hover {
+                width: 250px;
+                height: 50px;
+                margin-top: 22px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: #111;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+              }
+              
+              .glow-on-hover:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+              }
+              
+              .glow-on-hover:active {
+                color: #000
+              }
+              
+              .glow-on-hover:active:after {
+                background: transparent;
+              }
+              
+              .glow-on-hover:hover:before {
+                opacity: 1;
+              }
+              
+              .glow-on-hover:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+              }
+              
+              @keyframes glowing {
+                0% {
+                  background-position: 0 0;
+                }
+              
+                50% {
+                  background-position: 400% 0;
+                }
+              
+                100% {
+                  background-position: 0 0;
+                }
+              }
+
+              .form-container {
+                width: 30%;
+                height: 400px;
+                background:#000000;
+                border: 2px solid transparent;
+                margin-top: 2%;
+                margin-bottom: 0px;
+                font-size: 14px;
+                font-family: "Nunito Sans", sans-serif;
+                color: rgb(0, 0, 0);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                box-sizing: border-box;
+                border-radius: 1em;
+              }
+              
+              .form-container button:active {
+                scale: 0.95;
+              }
+              
+              .form-container .form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+              }
+              
+              .form-container .form-group {
+                display: flex;
+                margin: 5px 22px 2px;
+                flex-direction: column;
+                gap: 2px;
+              }
+              
+              .form-container .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: #ffffff;
+                border: #fff;
+                font-family: "Nunito Sans", sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+              }
+              
+              .form-container .form-group input {
+                width: 100%;
+                padding: 12px 16px;
+                border-radius: 8px;
+                color: #fff;
+                margin-top: 2px;
+                font-family: inherit;
+                background-color: transparent;
+              }
+              
+              .form-container .form-group textarea {
+                width: 100%;
+                padding: 12px 16px;
+                margin-top: 2px;
+                border-radius: 8px;
+                resize: none;
+                color: #fff;
+                height: 96px;
+                background-color: transparent;
+                font-family: inherit;
+              }
+              
+              .form-container .form-group input::placeholder {
+                opacity: 0.5;
+              }
+              
+              .form-container .form-group input:focus {
+                outline: none;
+                border-color: #e81cff;
+              }
+              
+              .form-container .form-group textarea:focus {
+                outline: none;
+                border-color: #e81cff;
+              }
+              
+              .form-container .form-submit-btn {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                align-self: flex-start;
+                font-family: inherit;
+                color: #e4e4e4;
+                font-weight: 600;
+                width: 40%;
+                height: 30px;
+                background: #0b0b0b;
+                border: 1px solid #fefefe;
+                padding: 6px 10px; 
+                font-size: inherit;
+                gap: 8px;
+                margin-top: 15px; 
+                margin-left: 22px;
+                cursor: pointer;
+                border-radius: 6px;
+            }
+            
+              
+              .form-container .form-submit-btn:hover {
+                background-color: #9900ff;
+                border-color: #000000;
+              }
+              
+            
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="parallax-text">
+            <h4 style="font-size: 18px; margin: 5px 0;">&lt;/&gt;</h4>
+            <h3 style="font-size: 18px; margin: 5px 0;">Hello, My Name is</h3>
+            <h1 style="font-size: 36px; margin: 10px 0;">Dr. Atul Kumar</h1>
+            <div class="about-section">
+                <div style="color: #677; font-size: 16px; margin-top: 5px;">
+                    <span style="margin-right: 5px;">I'm</span>
+                    <span style="color: rgb(166, 0, 255); font-weight: 800; margin-right: 5px;">Enthusiast Data Scientist</span>
+                    <span style="margin-right: 5px;">and have completed</span>
+                    <span style="font-weight: 700; margin-right: 5px;">Ph.D in Applied Physics (IIT-ISM),</span>
+                    <h3> </h3>
+                    <span style="font-weight: 700; margin-right: 5px;">EPCD AI & ML (IIT-Roorkee)</span>
+                    <span style="margin-right: 5px;">and have mastered the skills in</span>
+                    <span style="font-weight: 700; margin-right: 5px;">Artificial Intelligence,</span>
+                    <h3> </h3>
+                    <span style="font-weight: 700; margin-right: 5px;">Machine Learning, Deep Learning, Predictive Analysis, Generative AI</span>
+                    <h3> </h3>
+                    <span style="font-weight: 700; margin-right: 5px;">Computer Vision, MLoops and Azure Enthusiast</span>
+                    <h3> </h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="parallax-long" style="background-image: url('parallax_image1.jpg')">
+        <div class="parallax-content">
+            <span style="color: rgb(255, 255, 255); font-size: 25px; font-weight: 600; margin-right: 5px; text-decoration: underline;">Education</span>
+            <div class="exp-section">
+            <div id="content1" class="content-container active">
+                <h3> Assistant Professor, Dept of Physics BBMK University ( Feb 2018 – Present )</h3>
+                    <p2>I am working as an Assistant Professor in the Department of Physics at RSP College Jharia
+                    , a constituent unit of BBMKU Dhanbad. In my role, I was responsible for organizing degree 
+                    semester Classes for UG student. I taught a range of subjects including mathematical 
+                    Physics Quantum Physics Optics Classical mechanics, thermodynamics Digital 
+                    communication and Nuclear Physics. In addition to teaching to teaching I was also involved 
+                    in various administrative task assigned to me. These include handling initiatives such as 
+                    NIRF(National Institutional Ranking Framework ), Online Education and Inflibet ( 
+                    Information and library Network) Working in this capacity allows me to contribute to both 
+                    the academic and administrative aspects of the institute.</p2>
+                <h3><br></h3>
+                <h3> CodeSoft: Data Science Internship ( 1st Dec 2023 to 4th Jan 2024 ) </h3>
+                    <p2>Completed 4 weeks of 
+                        Virtual internship Program Topic covered ML, SQL and Predictive Analysis</p2>
+                <h3><br></h3>
+                <h3> Psyliq: Data Scientist Internship ( 05th Dec 2023 to 6th Jan 2024) </h3>
+                    <p2>Completed 4 weeks of Virtual Internship Program Topic covered ML, SQL, Data collection , Machine Learning, Predictive Analysis and Power BI.</p2>
+                <h3><br></h3>
+                <h3> Assistant Professor, PRATAP INSTITUTE OF TECHNOLOGY & SCIENCE, SIKAR (Oct 2013 – Nov 2017 ) </h3>
+                    <p2>I worked as an Assistant Professor the Department of Physics
+                        which encompassed subject such as Optics , Current electricity , Modern Physics, 
+                        Nuclear Physics, and quantum Physics . In addition to teaching, I also took on 
+                        administrative responsibilities, serving as the chief Hostel warden. My efforts in this role 
+                        were recognized by the management and awarded me with a Verdi care of appreciation 
+                        for my exceptional Performanc.</p2>
+                <h3><br></h3>
+                <span style="color: rgb(255, 255, 255); font-size: 25px; font-weight: 600; margin-right: 5px; text-decoration: underline;">Education</span>
+                <div class="edu">
+                    <ul>
+                        <li><h2>Ph.D. Applied Physics( Aug 2007 – Feb 2013) From ( IIT-ISM Dhanbad )</h2></li>
+                        <li><h2>Executive Post Graduation certification in Data science and Artificial Intelligence ( Aug 20223 - Present ) From ( IIT –Roorkee )</h2></li>
+                        <li><h2>M.Sc Physics with Specializations in Electronics ( Jul 2003 – Aug 2003) From ( Vinoba Bhave University ) with First Class</h2></li>
+                        <li><h2>Master of Computer Applications – MCA ( 2008 - 2011 ) From ( IGNOU ) with First Class</h2></li>
+                        <li><h2>B.Sc(Hon’s) Physics ( Jul 2000 – Jun 2003 ) From ( Vinoba Bhave University ) with First Clsss</h2></li>
+                        <li><h2>Bachelor of computer application (BCA) From ( IGNOU ) with First Class</h2></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="parallax-long" style="background-image: url('images.jpg')">
+        <div class="parallax-content">
+            <span style="color: rgb(255, 255, 255); font-size: 25px; font-weight: 600; margin-right: 5px; text-decoration: underline;">Certifications</span>
+            <p2>Use the Arrow Keys to navigate through the Certificates</p2>
+            <div class="slider">
+                <div class="slides">
+                <div class="slide"><a href="https://coursera.org/share/392b192938c08333be6152f8c78b5e0e" target="_blank"><img src="image1.jpg" alt="Image 1"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/840898662f423122e08da2e2e3c3b664" target="_blank"><img src="image2.jpg" alt="Image 2"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/7b24c15b85ac15646a2a5cb2a5da3f91" target="_blank"><img src="image3.jpg" alt="Image 3"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/645558d43d8c7ba3e6f16caa535c036d" target="_blank"><img src="image4.jpg" alt="Image 4"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/78d3db8ec50f0936a10026f8c5590722" target="_blank"><img src="image5.jpg" alt="Image 5"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/065244c2f48a29dd2aa654f9c95357bc" target="_blank"><img src="image6.jpg" alt="Image 6"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/57d54164bfc69326006f930305a9d3f8" target="_blank"><img src="image7.jpg" alt="Image 7"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/20e1b5f0c2716c03013da2bb77a47cb6" target="_blank"><img src="image8.jpg" alt="Image 8"></a></div>
+                <div class="slide"><a href="https://coursera.org/share/7bb6cc4c43ec465ebe91d5a0c8194c84" target="_blank"><img src="image9.jpg" alt="Image 9"></a></div>
+                <div class="slide"><a href="https://www.linkedin.com/learning/certificates/e524f7637b297b0f2a7494ba8d27f384fd48b4a12470aadd8a6498f6990a1e2e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bh%2BfQi4drTp6TXJRnx8jepw%3D%3D" target="_blank"><img src="image10.jpg" alt="Image 10"></a></div>
+                </div>
+                <div class="navigation">
+                    <button onclick="moveSlide(-1)">&#8249;</button>
+                    <button onclick="moveSlide(1)">&#8250;</button>
+                </div>
+            </div>
+        
+        <div class="p3">
+            <p>Click on the Certificates to View on Official Website!</p>
+            <br>
+        </div>
+    </section>
+    <section class="parallax-long" style="background-image: url('parallax_image1.jpg')">
+        <div class="parallax-content">
+            <span style="color: rgb(255, 255, 255); font-size: 25px; font-weight: 600; margin-right: 5px; text-decoration: underline;">Experience & Publications</span>
+                <div class="projects">
+                    <div class="container">
+                        <div class="mySlides">
+                          <div class="numbertext">1 / 9</div>
+                            <img src="HR.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="numbertext">2 / 9</div>
+                            <img src="Pharma.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="numbertext">3 / 9</div>
+                            <img src="Sales.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="numbertext">4 / 9</div>
+                            <img src="iris.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="numbertext">5 / 9</div>
+                            <img src="titanic.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="numbertext">6 / 9</div>
+                            <img src="sales1.jpg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides">
+                            <div class="numbertext">7 / 9</div>
+                              <img src="Student.jpg" style="width:100%">
+                          </div>
+                        
+                        <div class="mySlides">
+                            <div class="numbertext">8 / 9</div>
+                              <img src="Bio.jpg" style="width:100%">
+                          </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">9 / 9</div>
+                              <img src="https://img.freepik.com/premium-photo/drawing-human-heart-with-words-heart-it_582637-2957.jpg" style="width:100%">
+                          </div>
+                      
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      
+                        <div class="caption-container">
+                          <h2 id="caption"></h2>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img class="demo cursor" src="HR.jpg" style="width:100%" onclick="currentSlide(1)" alt="HR DATA ANALYSIS (Data Cleaning , SQL, Microsoft Power BI)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="Pharma.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pharma Data Analysis (Data Cleaning , SQL, Microsoft Power BI)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="Sales.jpg" style="width:100%" onclick="currentSlide(3)" alt="Sales Data Analysis (Data Cleaning , SQL, Microsoft Power BI)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="iris.jpg" style="width:100%" onclick="currentSlide(4)" alt="IRIS Flower Classification (Machine Learning, Computer Vision - Tensorflow, and other python Libraries.)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="titanic.jpg" style="width:100%" onclick="currentSlide(5)" alt="Titanic Survival Analysis (Machine Learning, Prediction Algorithms and other Libraries.)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="sales1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Sales Prediction Analysis (Machine Learning, Data Visualisation, Prediction Algorithms and other Libraries.)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="Student.jpg" style="width:100%" onclick="currentSlide(7)" alt="Student Performance in Exam (Machine Learning, Hypothesis Testing, Data Visualisation and Other Python Libraries)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="Bio.jpg" style="width:100%" onclick="currentSlide(8)" alt="Bio signal Analysis for Smoking (Machine Learning, Logistic Regression, Bagging Algorithm, Data Visualisation and Other Python Libraries)">
+                          </div>
+                          <div class="column">
+                            <img class="demo cursor" src="https://img.freepik.com/premium-photo/drawing-human-heart-with-words-heart-it_582637-2957.jpg" style="width:100%" onclick="currentSlide(9)" alt="Heart Disease (Machine Learning, Data analysis , Random Forest,Decision Tree and Best 
+                            Model Selection)">
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="glow-on-hover" onclick="redirectToPublications()">CHECK OUT MY PUBLICATIONS!</button>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="parallax-long" style="background-image: url('images.jpg')">
+        <div class="parallax-content">
+            <span style="color: rgb(255, 255, 255); font-size: 25px; font-weight: 600; margin-right: 5px; text-decoration: underline;">Let's Connect</span>
+            <div class="social-buttons">
+                <a href="#" class="social-button github">
+                  <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19"><path d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z"></path></svg>
+                    </a>
+                    <a href="#" class="social-button linkedin">
+                      <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Icons" stroke="none" stroke-width="1">
+                          <g transform="translate(-702.000000, -265.000000)">
+                              <path d="M746,305 L736.2754,305 L736.2754,290.9384 C736.2754,287.257796 734.754233,284.74515 731.409219,284.74515 C728.850659,284.74515 727.427799,286.440738 726.765522,288.074854 C726.517168,288.661395 726.555974,289.478453 726.555974,290.295511 L726.555974,305 L716.921919,305 C716.921919,305 717.046096,280.091247 716.921919,277.827047 L726.555974,277.827047 L726.555974,282.091631 C727.125118,280.226996 730.203669,277.565794 735.116416,277.565794 C741.21143,277.565794 746,281.474355 746,289.890824 L746,305 L746,305 Z M707.17921,274.428187 L707.117121,274.428187 C704.0127,274.428187 702,272.350964 702,269.717936 C702,267.033681 704.072201,265 707.238711,265 C710.402634,265 712.348071,267.028559 712.41016,269.710252 C712.41016,272.34328 710.402634,274.428187 707.17921,274.428187 L707.17921,274.428187 L707.17921,274.428187 Z M703.109831,277.827047 L711.685795,277.827047 L711.685795,305 L703.109831,305 L703.109831,277.827047 L703.109831,277.827047 Z" id="LinkedIn">
+                  </path>
+                          </g>
+                      </g>
+                  </svg>
+                </a>
+                
+                <a class="social-button gmail" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=atuldnb@gmail.com">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 12C6 15.3137 8.68629 18 12 18C14.6124 18 16.8349 16.3304 17.6586 14H12V10H21.8047V14H21.8C20.8734 18.5645 16.8379 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C15.445 2 18.4831 3.742 20.2815 6.39318L17.0039 8.68815C15.9296 7.06812 14.0895 6 12 6C8.68629 6 6 8.68629 6 12Z"</path>
+                    </svg>
+                  </a>
+               </div>
+               <div class="form-container">
+                <form class="form" onsubmit="sendEmail(); return false;">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How Can I Help You?</label>
+                        <textarea name="message" id="message" rows="10" cols="50" required></textarea>
+                    </div>
+                    <button class="form-submit-btn" type="submit">Submit</button>
+                </form>
+            </div>
+            
+    </section>   
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.switch-button');
+            const body = document.body;
+    
+            buttons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    console.log('Selected field:', event.target.getAttribute('data-value'));
+                });
+            });
+            
+    
+            window.addEventListener('scroll', () => {
+                const fadeInElements = document.querySelectorAll('.parallax-text, .parallax-content');
+                fadeInElements.forEach((element) => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenHeight = window.innerHeight;
+    
+                    if (elementPosition < screenHeight * 0.75) {
+                        element.classList.add('fade-in');
+                    }
+                });
+                if (window.scrollY > 200) {
+                    body.classList.add('fade-out');
+                } else {
+                    body.classList.remove('fade-out');
+                }
+            });
+    
+            const buttonsSlider = document.querySelectorAll('.switch-button-slider');
+            const contentContainers = document.querySelectorAll('.content-container');
+            const slidesContainer = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            const translateValue = -currentSlide * 100;
+            slidesContainer.style.transform = `translateX(${translateValue}%)`;
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                showSlide(currentSlide - 1);
+            } else if (event.key === 'ArrowRight') {
+                showSlide(currentSlide + 1);
+            }
+        });
+    });
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const githubButton = document.querySelector(".github");
+    const linkedinButton = document.querySelector(".linkedin");
+  
+    githubButton.addEventListener("click", function () {
+      window.location.href = "https://github.com/atuldnb"; 
+    });
+  
+    linkedinButton.addEventListener("click", function () {
+      window.location.href = "https://www.linkedin.com/in/atuldnb/";    
+    });
+  });
+  const slider = document.querySelector('.slider');
+    const slides = document.querySelector('.slides');
+    const slideItems = document.querySelectorAll('.slide');
+    const totalSlides = slideItems.length;
+    let currentIndex = 0;
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    function handleKeyPress(event) {
+        if (event.key === 'ArrowRight') {
+            moveSlide(1);
+        } else if (event.key === 'ArrowLeft') {
+            moveSlide(-1);
+        }
+    }
+
+    function moveSlide(direction) {
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        const slideWidth = slideItems[0].clientWidth;
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+
+    function redirectToPublications() {
+        window.location.href = 'publications.html';
+    }
+    
+    src="https://smtpjs.com/v3/smtp.js"
+
+    // Include the SMTP.js library
+    var script = document.createElement('script');
+    script.src = "https://smtpjs.com/v3/smtp.js";
+    document.head.appendChild(script);
+    
+    function sendEmail() {
+        console.log("Sending email...");
+        Email.send({
+            SecureToken: "c1a941b5-70b9-4170-9e0b-c4e51c7463e8",
+            To: 'atuldnb@gmail.com',
+            From: document.getElementById("email").value,
+            Subject: "New Response",
+            Body: "Email: " + document.getElementById("email").value + "<br>Message: " + document.getElementById("message").value
+        }).then(
+            message => {
+                console.log("Email sent successfully:", message);
+                alert("Message Sent!");
+            },
+            error => {
+                console.error("Error sending email:", error);
+                alert("Error sending email. Check console for details.");
+            }
+        );
+    }
+    
+    </script>
+</body>
+</html>
